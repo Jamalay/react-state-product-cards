@@ -1,23 +1,19 @@
 import { useState } from "react";
+import style from '../styles/Form.module.css'
+import logo from '../logos/lupa.png'
 
 const Form = (props) => {
-    const [text, setText] = useState('')
-    const [newData, setNewData] = useState(props.data)
 
-    const find = (e) => {
-        setText(e.target.value);
-        console.log(text);
-        props.setData(props.data.filter(dataElem => {
-            if(dataElem.name.includes(text)){
-                return dataElem
-            }
-        }))
+    const enterText = (e) => {
+        props.setText(e.target.value);
+        console.log(props.text);
     }
 
     return (
-        <div>
-            <input type="text" onChange={find}></input>
-        </div>
+        <form className={style.search}>
+            <input type="text" onChange={enterText} placeholder="Поиск"></input>
+            <img src={logo}></img>
+        </form>
     )
 }
 

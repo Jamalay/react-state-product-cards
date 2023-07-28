@@ -2,11 +2,24 @@ body{
     font-family: 'Roboto';
 }
 
+main{
+    display: flex;
+}
+
 .mainDiv {
     display: flex;
     flex-wrap: wrap;
     max-width: 960px;
     margin: auto;
+    /* margin-left: 100px; */
+}
+
+.mainDiv_withCart{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 960px;
+    margin: auto;
+    margin-left: 100px;
 }
 
 .card {
@@ -125,4 +138,18 @@ hr {
 
 .none{
     display: none;
+}
+
+.closeDetails{
+    color: red;
+    background-color: white;
+    border: none;
+    font-size: 14px;
+    margin-bottom: auto;
+}
+
+@media screen and (max-width: 1420px) {
+    main{
+        display: block;
+    }
 }
